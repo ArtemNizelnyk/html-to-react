@@ -314,7 +314,7 @@ describe('Html2React', () => {
     describe('parse valid HTML', () => {
       it('should return nothing with only a single <p> element', () => {
         const htmlInput = '<p>Does this work?</p>';
-        var isValidNode = function () {
+        const isValidNode = () => {
           return true;
         };
         const processingInstructions = [{
@@ -335,7 +335,7 @@ describe('Html2React', () => {
         const htmlInput = '<div><h1>Title</h1><p>Paragraph</p></div>';
         const htmlExpected = '<div><h1>Title</h1></div>';
 
-        var isValidNode = function () {
+        const isValidNode = () => {
           return true;
         };
 
@@ -355,7 +355,7 @@ describe('Html2React', () => {
         const htmlInput = '<div><div data-test="foo"><p>Text</p><p>Text</p></div></div>';
         const htmlExpected = '<div><div data-test="foo"><h1>Heading</h1></div></div>';
 
-        var isValidNode = function () {
+        const isValidNode = () => {
           return true;
         };
 
@@ -390,7 +390,7 @@ describe('Html2React', () => {
         const htmlExpected = '<div><h1>TITLE</h1><p>Paragraph</p>' +
         '<h1>ANOTHER TITLE</h1></div>';
 
-        var isValidNode = function () {
+        const isValidNode = () => {
           return true;
         };
 
